@@ -1,0 +1,82 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+
+class Player {
+ -nickname: String
+ -elo: int
+ -coins: int
+ -league: League
+ -avatar: Avatar
+}
+
+abstract class Article {
+ -name: String
+ -price: int
+}
+
+class Template {
+ -firstColor: String
+ -secondColor: String
+}
+
+class PieceDesign {
+ -pathRessource: String
+}
+
+class Avatar {
+ -pathRessource: String
+}
+
+Article <|- Template
+Article <|- PieceDesign
+Article <|- Avatar
+
+
+abstract class Piece {
+  -type : String
+  -color : Color
+  -position : Point2D
+  -renderUrl : PieceDesign
+  -validDestinations : List<Point2D>
+}
+
+class Pawn {
+  -isFirstMove : boolean
+  +isFirstMove() : boolean
+  +setFirstMove(b : boolean)
+  +calculateDestinations(board : Piece[][])
+}
+class Rook {
+  +calculateDestinations(board : Piece[][])
+}
+class Bishop {
+  +calculateDestinations(board : Piece[][])
+}
+class Knight {
+  +calculateDestinations(board : Piece[][])
+}
+class Queen {
+  +calculateDestinations(board : Piece[][])
+}
+class King {
+  +calculateDestinations(board : Piece[][])
+}
+' ====================
+' Package CONTROLLER
+' ====================
+class TurnManager {
+  -currentPlayer : Color
+  -whiteInCheck : boolean
+  -blackInCheck : boolean
+}
+
+Piece <|- Pawn
+Piece <|- Rook
+Piece <|- Bishop
+Piece <|- Knight
+Piece <|- Queen
+Piece <|- King
+TurnManager --> Piece
+
+@enduml

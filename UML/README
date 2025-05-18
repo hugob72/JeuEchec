@@ -1,0 +1,19 @@
+Salut bon juste pour le readme c'est assez simple 
+
+sous certaine version de la jvm tu peut directement utiliser une commande pour que ton fichier puml se mettent en svg ou png 
+
+perso j'ai ça : 
+
+attention j'ai du mettre mon path relatif à ou se trouve mon fichier plantuml.jar pas tjr besoin et si toi tu est sous windows préfère la 2e commande :) 
+
+
+commande 1 : 
+
+java -jar /usr/share/plantuml/plantuml.jar -svg plant.puml
+
+commande 2 : 
+
+java -jar ~/PlantUML/plantuml.jar -tpng mon_fichier.puml
+
+0 - SI par tout les hasard ça ne marche pas soit tu va lire la documentation sinon il y a toujours chatgpt 
+

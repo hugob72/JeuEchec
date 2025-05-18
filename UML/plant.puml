@@ -1,0 +1,95 @@
+@startuml
+
+' Définition des interfaces 
+interface Jouable
+interface Affichable
+
+' Définition des classes abstraites
+abstract class Piece
+abstract class Case
+
+' Définition des classes concrètes
+class Echiquier
+class Joueur
+
+' Spécialisation des pièces
+Piece <|-- Pawn
+Piece <|-- Rook
+Piece <|-- Knight
+Piece <|-- Bishop
+Piece <|-- Queen
+Piece <|-- King
+
+' Relations
+Jouable <|-- Piece
+Affichable <|-- Echiquier
+Affichable <|-- Joueur
+
+' Definition des classes 
+
+class Piece{
+	-String type
+	-List<int> avance 
+	-String Couleur
+	-List<String> position
+	-boolean jouable
+	
+	+Piece()
+	+String getCouleur()
+	+String getType()
+	+String getPosition()
+	+boolean isJouable()
+	+setPosition(List<String> pos)
+	+setJouable(boolean isJouable_)	
+	+abstract boolean movment()
+	+abstract boolean isCapturePossible()
+	+canCapture()
+	+isActif()
+}
+class Pawn{
+	-boolean firstMouvment
+	-boolean promotion
+	
+	+Pion()
+	+boolean movment()
+	+isCapturePossible()
+	+promotion()
+	+boolean priseEnPassant()	
+}
+class Rook{
+	+Rook()
+	+boolean isCapturePossible()
+	+boolean movment()
+}
+class Knight{
+	+Knight()
+	+boolean movment()
+	+boolean isCapturePossible()
+}
+class Bishop{
+    +Boshop()
+	+boolean movment()
+	+boolean isCapturePossible()
+}
+class Queen{
+	+Queen()
+	+boolean movment()
+	+boolean isCapturePossible()
+}
+class King{
+	+King()
+	+boolean movment()
+	+boolean isCapturePossible()
+}
+
+class Jouable{
+	+boolean movment()
+	+boolean canCapture()
+	+boolean isActif()
+}
+
+@enduml
+
+composition = *--
+agrégation = o--
+association = --

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="660.0" prefWidth="600.0" styleClass="body-background" stylesheets="@css/shop.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eseo.cpoo.jfx.echecpointexe.ShopController">
+   <children>
+      <HBox prefHeight="109.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+               <children>
+                  <Text fx:id="namePlayerOneText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Joueur 1" textAlignment="CENTER" wrappingWidth="199.162109375">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="coinsPlayerOneText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="500 pièces" textAlignment="CENTER" wrappingWidth="199.162109375">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+               <children>
+                  <Text fx:id="namePlayerTwoText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Joueur 2" textAlignment="CENTER" wrappingWidth="199.162109375">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="coinsPlayerTwoText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="400 pièces" textAlignment="CENTER" wrappingWidth="199.162109375">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children></VBox>
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <HBox alignment="CENTER" prefHeight="84.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="templateButton" mnemonicParsing="false" onMouseClicked="#onTemplateClicked" styleClass="filter-button" stylesheets="@css/shop.css" text="Plateau" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="pieceButton" mnemonicParsing="false" onMouseClicked="#onPieceClicked" styleClass="filter-button" text="Pièces" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="avatarButton" mnemonicParsing="false" onMouseClicked="#onAvatarClicked" styleClass="filter-button" text="Avatar" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <GridPane fx:id="shopGrid" alignment="CENTER" prefHeight="354.0" prefWidth="600.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </GridPane>
+      <VBox fx:id="confirmVbox" alignment="TOP_CENTER" prefHeight="112.0" prefWidth="600.0">
+         <children>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Separator>
+            <Text fx:id="confirmText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Pour quel joueur est cet achat ?" textAlignment="CENTER" wrappingWidth="357.162109375">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="playerOneButton" mnemonicParsing="false" onAction="#onPlayerOneButtonClicked" styleClass="player-button" text="Joueur 1" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="playerTwoButton" mnemonicParsing="false" onAction="#onPlayerTwoButtonClicked" styleClass="player-button" text="Joueur 2" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="58.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackButtonClicked" styleClass="filter-button" text="Retour" textFill="WHITE" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

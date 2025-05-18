@@ -1,0 +1,27 @@
+.body-background {
+    -fx-background-color: #2f3133;
+}
+
+.footer-background {
+    -fx-background-color: #262729;
+}
+
+.create-button {
+    -fx-min-width: 120px;
+    -fx-border-radius: 20px;
+    -fx-background-color: #e88a4f;
+}
+
+.create-button:hover {
+    -fx-background-color: #ba5e23;
+}
+
+.play-button {
+    -fx-min-width: 130px;
+    -fx-border-radius: 20px;
+    -fx-background-color: #81B64C;
+}
+
+.play-button:hover {
+    -fx-background-color: #549413;
+}

@@ -1,0 +1,78 @@
+@startuml
+top to bottom direction
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam classFontStyle bold
+skinparam classFontSize 12
+skinparam ParticipantPadding 30
+skinparam BoxPadding 20
+skinparam Padding 5
+skinparam classBackgroundColor #FDF6E3
+
+' ====================
+' PACKAGE MODEL
+' ====================
+abstract class Piece {
+  -type : String
+  -color : Color
+  -position : Point2D
+  -renderUrl : String
+  -validDestinations : List<Point2D>
+  +getX() : int
+  +getY() : int
+  +setRenderUrl()
+  +findValidDestinations(board : Piece[][])
+  +getValidDestinations() : List<Point2D>
+  +setPosition(p : Point2D)
+  +getPosition() : Point2D
+  +getColor() : Color
+  +getType() : String
+  +tryCapture(board, fromX, fromY, toX, toY) : boolean
+  #calculateDestinations(board : Piece[][])
+}
+
+class Pawn {
+  -isFirstMove : boolean
+  +isFirstMove() : boolean
+  +setFirstMove(b : boolean)
+  +calculateDestinations(board : Piece[][])
+}
+class Rook {
+  +calculateDestinations(board : Piece[][])
+}
+class Bishop {
+  +calculateDestinations(board : Piece[][])
+}
+class Knight {
+  +calculateDestinations(board : Piece[][])
+}
+class Queen {
+  +calculateDestinations(board : Piece[][])
+}
+class King {
+  +calculateDestinations(board : Piece[][])
+}
+' ====================
+' Package CONTROLLER
+' ====================
+class TurnManager {
+  -currentPlayer : Color
+  -whiteInCheck : boolean
+  -blackInCheck : boolean
+  +nextTurn()
+  +getCurrentPlayer() : Color
+  +isCurrentPlayerInCheck() : boolean
+  +setPlayerInCheck(color : Color, isInCheck : boolean)
+  +isPlayerInCheck(color : Color) : boolean
+}
+
+Piece <|- Pawn
+Piece <|- Rook
+Piece <|- Bishop
+Piece <|- Knight
+Piece <|- Queen
+Piece <|- King
+TurnManager --> Piece
+
+
+@enduml

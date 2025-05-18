@@ -1,0 +1,262 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "eseo.cpoo.jfx.ChessBoardController",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_3060493 { 
+   	label=cpoo
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_342550619 { 
+   	label=jfx
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   Bishop303065459[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Bishop</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculateDestinations(board: Piece[][])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ChessBoardController246921295[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ChessBoardController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   board: Piece[][] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   chessGrid: GridPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   logBox: TextArea [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   selectedButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   selectedPiece: Piece [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   statusLabel: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   turnManager: TurnManager [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- addClickHandlers()</TD></TR>
+<TR><TD ALIGN="LEFT" >- clearSquare(button: Button)</TD></TR>
+<TR><TD ALIGN="LEFT" >- generateChessGrid()</TD></TR>
+<TR><TD ALIGN="LEFT" >- getButtonAt(col: int, row: int): Button</TD></TR>
+<TR><TD ALIGN="LEFT" >- handleClick(col: int, row: int, button: Button)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ initialize()</TD></TR>
+<TR><TD ALIGN="LEFT" >- log(message: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- placeAllPieces()</TD></TR>
+<TR><TD ALIGN="LEFT" >- placeBackRow(row: int, isBlack: boolean)</TD></TR>
+<TR><TD ALIGN="LEFT" >- placePawns(row: int, isBlack: boolean)</TD></TR>
+<TR><TD ALIGN="LEFT" >- updateStatus()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+King303065459[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)King</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculateDestinations(board: Piece[][])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Knight303065459[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Knight</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculateDestinations(board: Piece[][])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Pawn303065459[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Pawn</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   isFirstMove: boolean [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculateDestinations(board: Piece[][])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Piece1476077472[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Piece</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   color: Color [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   position: Point2D [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   renderUrl: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   type: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   validDestinations: List&lt;Point2D&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># addDestination(x: int, y: int)</TD></TR>
+<TR><TD ALIGN="LEFT" ># addLineMoves(board: Piece[][], dx: int, dy: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ calculateDestinations(board: Piece[][])</TD></TR>
+<TR><TD ALIGN="LEFT" ># calculateDestinations()</TD></TR>
+<TR><TD ALIGN="LEFT" ># canCapture(x: int, y: int, board: Piece[][]): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ findValidDestinations(board: Piece[][])</TD></TR>
+<TR><TD ALIGN="LEFT" ># inBounds(x: int, y: int): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" ># isFree(x: int, y: int, board: Piece[][]): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ tryCapture(board: Piece[][], fromX: int, fromY: int, toX: int, toY: int): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Queen303065459[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Queen</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculateDestinations(board: Piece[][])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Rook303065459[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Rook</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculateDestinations(board: Piece[][])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+TurnManager1004619297[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TurnManager</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   blackInCheck: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   currentPlayer: Color [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   whiteInCheck: boolean [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ isPlayerInCheck(playerColor: Color): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ nextTurn()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+ChessBoardController246921295 -> Piece1476077472[label="board
+[0..*]"];
+ChessBoardController246921295 -> Piece1476077472[label="selectedPiece
+[0..1]"];
+ChessBoardController246921295 -> TurnManager1004619297[label="turnManager
+[0..1]"];
+Piece1476077472 -> Bishop303065459[arrowhead=none, arrowtail=empty, dir=both];
+Piece1476077472 -> King303065459[arrowhead=none, arrowtail=empty, dir=both];
+Piece1476077472 -> Knight303065459[arrowhead=none, arrowtail=empty, dir=both];
+Piece1476077472 -> Pawn303065459[arrowhead=none, arrowtail=empty, dir=both];
+Piece1476077472 -> Queen303065459[arrowhead=none, arrowtail=empty, dir=both];
+Piece1476077472 -> Rook303065459[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml

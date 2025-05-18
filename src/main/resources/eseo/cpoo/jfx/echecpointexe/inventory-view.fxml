@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="492.0" prefWidth="600.0" styleClass="body-background" stylesheets="@css/inventory.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eseo.cpoo.jfx.echecpointexe.InventoryController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="148.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="85.0" prefWidth="71.0">
+               <HBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </HBox.margin>
+               <children>
+                  <HBox fx:id="selectedTemplateHBox" alignment="CENTER" prefHeight="71.0" prefWidth="71.0" styleClass="selected-article" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Template">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER">
+               <HBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </HBox.margin>
+               <children>
+                  <HBox fx:id="selectedPiecesDesignHBox" alignment="CENTER" prefHeight="71.0" prefWidth="71.0" styleClass="selected-article" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Pièces">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER">
+               <HBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </HBox.margin>
+               <children>
+                  <HBox fx:id="selectedAvatarHBox" alignment="CENTER" prefHeight="71.0" prefWidth="71.0" styleClass="selected-article" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Avatar">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="20.0" />
+         </padding>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <HBox prefHeight="255.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+               <children>
+                  <Text fx:id="namePlayerOneText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Joueur 1" textAlignment="CENTER" wrappingWidth="199.162109375">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <GridPane fx:id="playerOneGrid" alignment="CENTER" prefHeight="354.0" prefWidth="600.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </GridPane>
+               </children>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+               <children>
+                  <Text fx:id="namePlayerTwoText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Joueur 2" textAlignment="CENTER" wrappingWidth="199.162109375">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <GridPane fx:id="playerTwoGrid" alignment="CENTER" prefHeight="354.0" prefWidth="600.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </GridPane>
+               </children></VBox>
+         </children>
+      </HBox>
+      <VBox fx:id="confirmVbox" alignment="TOP_CENTER" prefHeight="63.0" prefWidth="600.0">
+         <children>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Separator>
+            <Text fx:id="confirmText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Souhaitez-vous équiper cet article : ?" textAlignment="CENTER" wrappingWidth="593.9621033668518">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="yesButton" mnemonicParsing="false" onAction="#onYesButtonClicked" styleClass="player-button" text="Oui" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="58.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackButtonClicked" styleClass="filter-button" text="Retour" textFill="WHITE" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

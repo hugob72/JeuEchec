@@ -1,0 +1,16 @@
+{
+  "players": [
+    {
+      "nickname": "Player 1",
+      "elo": 1200,
+      "league": "SILVER",
+      "coins": 500
+    },
+    {
+      "nickname": "Player 2",
+      "elo": 1500,
+      "league": "GOLD",
+      "coins": 1000
+    }
+  ]
+}

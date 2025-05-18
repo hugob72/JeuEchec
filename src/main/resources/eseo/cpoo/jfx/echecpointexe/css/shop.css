@@ -1,0 +1,23 @@
+.body-background {
+    -fx-background-color: #2f3133;
+}
+
+.filter-button {
+    -fx-min-width: 120px;
+    -fx-border-radius: 20px;
+    -fx-background-color: #e88a4f;
+}
+
+.filter-button:hover {
+    -fx-background-color: #ba5e23;
+}
+
+.player-button {
+    -fx-min-width: 130px;
+    -fx-border-radius: 20px;
+    -fx-background-color: #81B64C;
+}
+
+.player-button:hover {
+    -fx-background-color: #549413;
+}
